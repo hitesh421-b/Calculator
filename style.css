@@ -1,0 +1,128 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #0f1115;
+    padding: 20px;
+}
+
+.calculator-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+}
+
+.calculator-heading {
+    color: #ffffff;
+    font-size: 1.85rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+}
+
+.calculator {
+    background-color: #1c1c1e;
+    border-radius: 20px;
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.45);
+    width: 320px;
+    padding: 24px;
+}
+
+/* Seamless display screen */
+.display {
+    color: #ffffff;
+    font-size: 2.6rem;
+    font-weight: 300;
+    padding: 12px 6px 20px 6px;
+    text-align: right;
+    min-height: 72px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    overflow-x: auto;
+    word-break: break-all;
+}
+
+/* CSS Grid layout for buttons */
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+}
+
+/* Base button style (Numbers) */
+.btn {
+    border: none;
+    background-color: #2c2c2e;
+    color: #ffffff;
+    font-size: 1.35rem;
+    font-weight: 400;
+    height: 56px;
+    border-radius: 12px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.15s ease, transform 0.05s ease;
+}
+
+.btn:hover {
+    background-color: #3a3a3c;
+}
+
+.btn:active {
+    background-color: #48484a;
+    transform: scale(0.97);
+}
+
+/* Clear button (Top function) */
+.btn-clear {
+    grid-column: span 2;
+    background-color: #505054;
+    color: #ffffff;
+    font-weight: 500;
+}
+
+.btn-clear:hover {
+    background-color: #636366;
+}
+
+.btn-clear:active {
+    background-color: #7c7c80;
+}
+
+/* Operators (+, -, *, /) and Equals (=) share a unified, cohesive accent */
+.btn-operator,
+.btn-equal {
+    background-color: #ff9f0a;
+    color: #ffffff;
+    font-size: 1.45rem;
+    font-weight: 500;
+}
+
+.btn-operator:hover,
+.btn-equal:hover {
+    background-color: #f09000;
+}
+
+.btn-operator:active,
+.btn-equal:active {
+    background-color: #d68000;
+}
+
+.btn-zero {
+    grid-column: span 2;
+}
+
+.btn-equal {
+    grid-row: span 2;
+    height: 100%;
+}
